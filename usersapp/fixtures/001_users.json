@@ -1,0 +1,62 @@
+[
+  {
+    "model": "usersapp.user",
+    "pk": "326c488f-81dd-454b-a6c4-2decef8fe1f4",
+    "fields": {
+      "username": "username1",
+      "firstname": "firstname1",
+      "lastname": "lastname1",
+      "email": "username1@gb.local"
+    }
+  },
+  {
+    "model": "usersapp.user",
+    "pk": "eeedf745-884c-438b-bed4-15fab55edd99",
+    "fields": {
+      "username": "username2",
+      "firstname": "firstname2",
+      "lastname": "lastname2",
+      "email": "username2@gb.local"
+    }
+  },
+  {
+    "model": "usersapp.user",
+    "pk": "7b8c17ac-3763-4c4f-bf97-3f1f3faf6325",
+    "fields": {
+      "username": "username3",
+      "firstname": "firstname3",
+      "lastname": "lastname3",
+      "email": "username3@gb.local"
+    }
+  },
+  {
+    "model": "usersapp.user",
+    "pk": "f29ddc20-17cb-4ef3-a754-a939bffe66e3",
+    "fields": {
+      "username": "username4",
+      "firstname": "firstname4",
+      "lastname": "lastname4",
+      "email": "username4@gb.local"
+    }
+  },
+  {
+    "model": "usersapp.user",
+    "pk": "00df1bc4-0b1e-4930-bb24-90bbad4cc29d",
+    "fields": {
+      "username": "username5",
+      "firstname": "firstname5",
+      "lastname": "lastname5",
+      "email": "username5@gb.local"
+    }
+  },
+  {
+    "model": "usersapp.user",
+    "pk": "35f5292a-4a1f-485e-9e77-ee1060b810fe",
+    "fields": {
+      "username": "username6",
+      "firstname": "firstname6",
+      "lastname": "lastname6",
+      "email": "username6@gb.local"
+    }
+  }
+]
