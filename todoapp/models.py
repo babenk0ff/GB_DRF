@@ -8,8 +8,11 @@ class Project(models.Model):
     repo_link = models.URLField(max_length=128)
     users = models.ManyToManyField(User)
 
+    def __str__(self):
+        return self.name
 
-class TODO(models.Model):
+
+class ToDo(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     body = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
