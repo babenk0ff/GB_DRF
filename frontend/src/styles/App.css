@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    background: var(--bs-body-color);
+    height: 100px;
+    margin-top: auto;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.55);
+    margin-top: 10px;
+}
+
+.error-404-content {
+    display: flex;
+    justify-content: center;
+}
