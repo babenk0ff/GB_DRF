@@ -25,3 +25,19 @@
     display: flex;
     justify-content: center;
 }
+
+.form-login {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.form-login-container {
+    align-content: center;
+}
+
+.navbar-divider {
+    padding: var(--bs-nav-link-padding-y);
+    color: var(--bs-nav-link-color)
+}

@@ -1,3 +1,4 @@
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.viewsets import GenericViewSet
 from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, UpdateModelMixin, DestroyModelMixin
 
@@ -12,3 +13,4 @@ class UserCustomViewSet(UpdateModelMixin,
 
     queryset = User.objects.all()
     serializer_class = UserModelSerializer
+    permission_classes = [IsAuthenticated]
