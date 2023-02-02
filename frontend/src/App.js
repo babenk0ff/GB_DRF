@@ -16,9 +16,9 @@ import Cookies from "universal-cookie/es6";
 
 
 class App extends React.Component {
-    // serverAddr = 'http://192.168.28.129:8000';
+    serverAddr = 'http://192.168.28.129:8000';
     // serverAddr = 'http://localhost:8000';
-    serverAddr = 'http://192.168.1.7:8000';
+    // serverAddr = 'http://192.168.1.7:8000';
 
     constructor(props) {
         super(props);
