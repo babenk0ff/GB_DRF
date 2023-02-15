@@ -1,9 +1,10 @@
 from django.test import TestCase
 from mixer.backend.django import mixer
 from rest_framework import status
-from rest_framework.test import APIClient, APISimpleTestCase
+from rest_framework.test import APIClient, APISimpleTestCase, APIRequestFactory
 
 from .models import User, Project, ToDo
+from .views import ProjectModelViewSet
 
 
 class TestProjectViewSet(TestCase):
@@ -38,6 +39,24 @@ class TestProjectViewSet(TestCase):
 
         project = Project.objects.get(id=self.project.id)
         self.assertEqual(project.name, new_name)
+
+    def test_create_admin(self):
+        project_name = 'New cool project'
+        repo_link = 'http://127.0.0.1/repos/new_project'
+
+        self.client.login(username='admin', password='qwerty')
+        response = self.client.post(f'/api/projects/', {'name': project_name, 'repo_link': repo_link}, format='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_create_admin_request_factory(self):
+        project_name = 'New cool project'
+        repo_link = 'http://127.0.0.1/repos/new_project'
+
+        factory = APIRequestFactory()
+        request = factory.post('/api/projects/', {'name': project_name, 'repo_link': repo_link}, format='json')
+        view = ProjectModelViewSet.as_view({'post': 'create'})
+        response = view(request)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 
 class TestTodoViewSet(TestCase):

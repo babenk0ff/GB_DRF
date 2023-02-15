@@ -4,11 +4,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-
 function NavbarItem({isAuth, logout, username}) {
     return (
         <div>
-            <Navbar className="mb-2" bg="dark" variant="dark">
+            <Navbar className="mb-3" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand href="">
                         <img
