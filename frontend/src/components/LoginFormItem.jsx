@@ -30,7 +30,7 @@ class LoginFormItem extends React.Component {
         return (
             <div className='form-login-container'>
                 {this.props.isAuth() && (
-                    <Navigate to='/users' />
+                    <Navigate to='/projects' />
                 )}
                 <Form className='form-login' onSubmit={event => this.handleSubmit(event)}>
                     <Form.Group className='mb-3' controlId='formBasicUsername'>

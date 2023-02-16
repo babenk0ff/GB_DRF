@@ -1,6 +1,7 @@
 import React from 'react';
+import Button from "react-bootstrap/Button";
 
-const TodoItem = ({todo}) => {
+const TodoItem = ({todo, completeTodo}) => {
     return (
         <tr>
             <td>{todo.project.name}</td>
@@ -12,6 +13,9 @@ const TodoItem = ({todo}) => {
                     new Date(todo.createdAt).toLocaleDateString('en-US') + ', ' +
                     new Date(todo.createdAt).toLocaleTimeString('en-US')
                 }
+            </td>
+            <td>
+                <Button variant="outline-success" onClick={() => completeTodo(todo.id)}>Mark completed</Button>
             </td>
         </tr>
     );
