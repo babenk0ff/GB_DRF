@@ -1,0 +1,6 @@
+frontend
+venv
+.gitignore
+db.sqlite3
+docker-compose.yml
+Dockerfile
