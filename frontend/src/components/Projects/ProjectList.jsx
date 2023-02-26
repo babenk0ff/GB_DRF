@@ -1,9 +1,8 @@
 import React, {Fragment, useState} from 'react';
 import ProjectItem from "./ProjectItem";
 import {Link} from "react-router-dom";
-import {FloatingLabel, Stack} from "react-bootstrap";
+import {Stack} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 
 const ProjectList = ({projects, deleteProject}) => {
     const [searchQuery, setSearchQuery] = useState('');

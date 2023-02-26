@@ -7,3 +7,4 @@ __pycache__
 keys.py
 var
 node_modules/
+config/settings_local.py

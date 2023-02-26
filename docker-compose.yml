@@ -1,0 +1,54 @@
+version: '3.1'
+
+services:
+
+  db:
+    container_name: db
+    image: postgres:13.1
+    privileged: true
+    ports:
+      - "5432:5432"
+    healthcheck:
+       test: ["CMD-SHELL", "pg_isready -U dante -d todo"]
+       interval: 5s
+       timeout: 5s
+       retries: 5
+    environment:
+      POSTGRES_USER: dante
+      POSTGRES_PASSWORD: dante123456
+      POSTGRES_DB: todo
+
+  backend:
+    container_name: backend
+    build:
+      context: .
+    image: backend
+    expose:
+      - 8080
+    command: bash -c
+      "
+      python manage.py migrate
+      && python manage.py loaddata db.json
+      && gunicorn config.wsgi -b 0.0.0.0:8080
+      "
+    depends_on:
+      db:
+        condition: service_healthy
+
+  nginx:
+    container_name: nginx_backend
+    build: ./nginx
+    image: nginx_backend
+    ports:
+      - "8000:80"
+    depends_on:
+      - backend
+
+  frontend:
+    container_name: nginx_frontend
+    build: ./frontend
+    image: nginx_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - nginx

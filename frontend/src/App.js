@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 
 import Footer from "./components/Footer";
 import ProjectList from "./components/Projects/ProjectList";
@@ -19,9 +19,7 @@ import TodoForm from "./components/Todo/TodoForm";
 
 
 class App extends React.Component {
-    serverAddr = `http://192.168.127.128:8000`;
-    // serverAddr = `http://192.168.28.129:8000`;
-    // serverAddr = `http://localhost:8000`;
+    serverAddr = `http://127.0.0.1:8000`;
 
     constructor(props) {
         super(props);

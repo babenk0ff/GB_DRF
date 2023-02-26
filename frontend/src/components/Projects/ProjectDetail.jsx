@@ -15,7 +15,7 @@ const ProjectDetail = ({todos, completeTodo}) => {
             </Row>
             <Row className="rounded border pb-3 mb-3">
                 <h3 className="p-3">Repository link</h3>
-                <a href="#" className="text-decoration-none" >{project.repoLink}</a>
+                <a href="/#" className="text-decoration-none" >{project.repoLink}</a>
             </Row>
             <Row className="rounded border mb-3">
                 {/*<h3 className="p-3">Users</h3>*/}
